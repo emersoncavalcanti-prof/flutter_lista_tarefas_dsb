@@ -16,9 +16,32 @@ class _HomePageState extends State<HomePage> {
           'https://img.icons8.com/ios-filled/50/000000/task.png',
           color: Colors.white,
         ),
-        title: Text('Lista de Tarefas'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Lista de Tarefas'),
+            Text(
+              'Mantenha suas tarefas organizadas',
+              style: TextStyle(fontSize: 12, color: Colors.white70),
+            ),
+          ],
+        ),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsetsGeometry.all(8),
+            child: TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Adicione uma tarefa',
+                suffixIcon: Icon(Icons.add),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
